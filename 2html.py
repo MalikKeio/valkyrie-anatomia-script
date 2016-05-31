@@ -103,9 +103,10 @@ class HTMLFile:
     <title>%s</title>
 </head>
 <body>
+    <h1>%s</h1>
     %s
 </body>
-</html>''' % (self.title, self.body)
+</html>''' % (self.title, self.title, self.body)
         return html
 
 
@@ -173,5 +174,5 @@ for chapter in CHAPTERS:
                 os.makedirs(out_folder_path)
             target = "%s/%s.html" % (out_folder_path, name)
             with open(target, "w") as out:
-                title = "%s --- %s" % (chapter, CHAPTERS[chapter].split('.')[1])
+                title = "%s &mdash; %s" % (chapter, CHAPTERS[chapter].split('.')[1])
                 out.write(HTMLFile(title, html_body).getHTML())
