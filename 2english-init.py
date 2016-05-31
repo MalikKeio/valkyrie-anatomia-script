@@ -2,19 +2,7 @@
 
 import os
 
-CHAPTERS = {
-    "1.戦乙女の目覚め": "1. The Awakening of the Battle Maiden"
-}
-CHARACTERS = {
-    "？？？": "???",
-    "オーディン": "Odin",
-    "レナス": "Lenneth",
-    "ゼフィロス": "Zephyros",
-    "ヴァン神族": "Vanir",
-    "フギン": "Huginn",
-    "ムニン": "Muninn",
-    "ジャンヌ": "Jeanne"
-}
+from names import CHAPTERS, CHARACTERS
 
 for chapter in CHAPTERS:
     en_chapter = "en/%s" % CHAPTERS[chapter]
