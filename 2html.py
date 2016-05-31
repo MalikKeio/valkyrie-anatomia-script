@@ -90,6 +90,23 @@ class File:
             html += child.getHTML()
         html += '</div>'
         return html
+class HTMLFile:
+    def __init__(self, title, body):
+        self.title = title
+        self.body = body
+    def getHTML(self):
+        html = '''<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>%s</title>
+</head>
+<body>
+    %s
+</body>
+</html>''' % (self.title, self.body)
+        return html
+
 
 def getHTMLForOneQuest(filejp, fileen):
     print("[INFO] Opening '%s' and '%s'..." % (filejp, fileen))
@@ -149,10 +166,11 @@ for chapter in CHAPTERS:
         for name in files:
             filejp_path = os.path.join(root, name)
             fileen_path = en_chapter + "/" + name
-            html = getHTMLForOneQuest(filejp_path, fileen_path)
+            html_body = getHTMLForOneQuest(filejp_path, fileen_path)
             out_folder_path = "%s/%d" % (HTML_HOME, index)
             if not os.path.exists(out_folder_path):
                 os.makedirs(out_folder_path)
             target = "%s/%s.html" % (out_folder_path, name)
             with open(target, "w") as out:
-                out.write(html)
+                title = "%s --- %s" % (chapter, CHAPTERS[chapter].split('.')[1])
+                out.write(HTMLFile(title, html_body).getHTML())
