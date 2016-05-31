@@ -96,7 +96,7 @@ def getHTMLForOneQuest(filejp, fileen):
     f = File()
     content_jp = None
     content_en = None
-    previous_line_empty = False
+    previous_line_empty = True
     for linejp, lineen in zip(open(filejp), open(fileen)):
         # remove new line character
         linejp = linejp[:-1]
