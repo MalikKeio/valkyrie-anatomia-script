@@ -1,0 +1,27 @@
+.file {
+  display: table;
+}
+
+.utterance, .window {
+  display: table-row;
+}
+
+.utterance-jp, .utterance-en, .window-jp, .window-en {
+  display: table-cell;
+}
+
+.utterance .content {
+  padding-left: 10px;
+}
+
+.speaker {
+  color: blue;
+}
+
+.window {
+  color: rgb(100,100,100);
+  text-align: center;
+}
+.window-jp, .window-en {
+  padding: 5px 0;
+}
