@@ -2,11 +2,11 @@
   display: table;
 }
 
-.utterance, .window {
+.utterance, .window, .transition {
   display: table-row;
 }
 
-.utterance-jp, .utterance-en, .window-jp, .window-en {
+.utterance-jp, .utterance-en, .window-jp, .window-en, .transition-jp, .transition-en {
   display: table-cell;
 }
 

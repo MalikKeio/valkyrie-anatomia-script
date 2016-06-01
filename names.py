@@ -1,5 +1,6 @@
 CHAPTERS = {
-    "1.戦乙女の目覚め": "1. The Awakening of the Battle Maiden"
+    "1.戦乙女の目覚め": "1. The Awakening of the Battle Maiden",
+    "2.魂の律動：剣を振る理由": "2. Spiritual Concentration: What to Wield the Sword For"
 }
 CHARACTERS = {
     "？？？": "???",

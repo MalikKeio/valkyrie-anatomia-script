@@ -12,7 +12,8 @@ CLASSES = {
     "s": "speaker",
     "c": "content",
     "l": "line",
-    "w": "window"
+    "w": "window",
+    "t": "transition"
 }
 
 class Content:
@@ -76,11 +77,14 @@ class Window:
             html += child.getHTML()
         html += '</div>'
         return html
+class Transition:
+    def getHTML(self):
+        return '<div class="%s"><div class="%s-jp"><hr></div><div class="%s-jp"><hr></div></div>' % (3*(CLASSES['t'],))
 class File:
     def __init__(self):
         self.children = []
     def add_child(self, child):
-        if isinstance(child, Utterance) or isinstance(child, Window):
+        if isinstance(child, Utterance) or isinstance(child, Window) or isinstance(child, Transition):
             self.children.append(child)
         else:
             raise TypeError("Child's instance is not supported: %s" % child)
@@ -123,7 +127,10 @@ def getHTMLForOneQuest(filejp, fileen):
         if len(linejp) == 0:
             previous_line_empty = True
             continue
-        if linejp[0] == "\t" and len(linejp) > 1 and linejp[1] != "\t":
+        if linejp == "---":
+            # This is a transition
+            f.add_child(Transition())
+        elif linejp[0] == "\t" and len(linejp) > 1 and linejp[1] != "\t":
             # This is a line of speech
             if content_jp is None or content_en is None:
                 print("[WARN] I guess there is a syntax error in the vp file around:\n    %s" % linejp)
