@@ -2,11 +2,12 @@
   display: table;
 }
 
-.utterance, .window, .transition {
+.utterance, .window, .transition, .battle {
   display: table-row;
 }
 
-.utterance-jp, .utterance-en, .window-jp, .window-en, .transition-jp, .transition-en {
+.utterance-jp, .utterance-en, .window-jp, .window-en, .transition-jp, .transition-en,
+.battle-jp, .battle-en {
   display: table-cell;
 }
 
@@ -24,4 +25,9 @@
 }
 .window-jp, .window-en {
   padding: 5px 0;
+}
+
+.battle {
+  text-align: center;
+  color: darkred;
 }

@@ -12,5 +12,9 @@ CHARACTERS = {
     "ムニン": "Muninn",
     "ジャンヌ": "Jeanne",
     "カラス１": "Raven 1",
-    "カラス２": "Raven 2"
+    "カラス２": "Raven 2",
+    "セナ": "Senna",
+    "カラドック": "Caradoc",
+    "店主": "Shopkeeper",
+    "常連客": "Regular customer"
 }

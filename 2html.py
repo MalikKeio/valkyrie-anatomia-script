@@ -13,7 +13,8 @@ CLASSES = {
     "c": "content",
     "l": "line",
     "w": "window",
-    "t": "transition"
+    "t": "transition",
+    "b": "battle"
 }
 
 class Content:
@@ -79,12 +80,15 @@ class Window:
         return html
 class Transition:
     def getHTML(self):
-        return '<div class="%s"><div class="%s-jp"><hr></div><div class="%s-jp"><hr></div></div>' % (3*(CLASSES['t'],))
+        return '<div class="%s"><div class="%s-jp"><hr></div><div class="%s-en"><hr></div></div>' % (3*(CLASSES['t'],))
+class Battle:
+    def getHTML(self):
+        return '<div class="%s"><div class="%s-jp"><hr>戦闘<hr></div><div class="%s-en"><hr>Battle<hr></div></div>' % (3*(CLASSES['b'],))
 class File:
     def __init__(self):
         self.children = []
     def add_child(self, child):
-        if isinstance(child, Utterance) or isinstance(child, Window) or isinstance(child, Transition):
+        if isinstance(child, Utterance) or isinstance(child, Window) or isinstance(child, Transition) or isinstance(child, Battle):
             self.children.append(child)
         else:
             raise TypeError("Child's instance is not supported: %s" % child)
@@ -130,6 +134,9 @@ def getHTMLForOneQuest(filejp, fileen):
         if linejp == "---":
             # This is a transition
             f.add_child(Transition())
+        elif linejp == "!!!":
+            # This is a battle
+            f.add_child(Battle())
         elif linejp[0] == "\t" and len(linejp) > 1 and linejp[1] != "\t":
             # This is a line of speech
             if content_jp is None or content_en is None:
