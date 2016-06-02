@@ -16,5 +16,7 @@ CHARACTERS = {
     "セナ": "Senna",
     "カラドック": "Caradoc",
     "店主": "Shopkeeper",
-    "常連客": "Regular customer"
+    "常連客": "Regular customer",
+    "ガラの悪い客１": "Ill-bred customer 1",
+    "ガラの悪い客２": "Ill-bred customer 2"
 }
