@@ -98,23 +98,48 @@ class File:
             html += child.getHTML()
         html += '</div>'
         return html
+class Div:
+    def __init__(self, classes=None, innerHTML=""):
+        if classes is None:
+            classes = []
+        self.innerHTML = innerHTML
+        self.classes = classes
+        self.children = []
+    def getHTML(self):
+        innerHTML = self.innerHTML
+        for child in self.children:
+            innerHTML += child.getHTML()
+        if len(self.classes) == 0:
+            return "<div>%s</div>" % innerHTML
+        else:
+            classString = ' '.join(self.classes)
+            return '<div class="%s">%s</div>' % (classString, innerHTML)
+    def add_child(self, child):
+        self.children.append(child)
+    def create_child(self, classes=None, innerHTML=""):
+        div = Div(classes, innerHTML)
+        self.add_child(div)
+        return div
+    def sort(self):
+        self.children.sort(key=lambda child: child.getHTML())
 class HTMLFile:
-    def __init__(self, title, body):
+    def __init__(self, path, title, body):
         self.title = title
         self.body = body
+        self.path = path
     def getHTML(self):
         html = '''<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="%sstyle.css">
     <title>%s</title>
 </head>
 <body>
     <h1>%s</h1>
     %s
 </body>
-</html>''' % (self.title, self.title, self.body)
+</html>''' % (self.path, self.title, self.title, self.body)
         return html
 
 
@@ -175,9 +200,16 @@ def getHTMLForOneQuest(filejp, fileen):
     return f.getHTML()
 
 HTML_HOME = "html"
+index_html_body = Div(['file'])
+main_story_div = index_html_body.create_child(["main-story"])
+side_story_div = index_html_body.create_child(["side-story"])
 for chapter in CHAPTERS:
     index = int(chapter.split('.')[0])
     en_chapter = "en/%s" % CHAPTERS[chapter]
+    chapter_div = main_story_div.create_child(['chapter'])
+    title = "%s &mdash; %s" % (chapter, CHAPTERS[chapter].split('.')[1])
+    chapter_div.create_child(['chapter-title'], title)
+    chapter_content_div = chapter_div.create_child(['chapter-content'])
     for root, dirs, files in os.walk('jp/%s' % chapter):
         for name in files:
             filejp_path = os.path.join(root, name)
@@ -187,6 +219,10 @@ for chapter in CHAPTERS:
             if not os.path.exists(out_folder_path):
                 os.makedirs(out_folder_path)
             target = "%s/%s.html" % (out_folder_path, name)
+            chapter_content_div.create_child(["subchapter"], '<a href="%d/%s.html">%s</a>' % (index, name, name.split(',')[0]))
             with open(target, "w") as out:
-                title = "%s &mdash; %s" % (chapter, CHAPTERS[chapter].split('.')[1])
-                out.write(HTMLFile(title, html_body).getHTML())
+                out.write(HTMLFile('../', title, html_body).getHTML())
+    chapter_content_div.sort()
+index_html_body.sort()
+with open("%s/index.html" % HTML_HOME, 'w') as out:
+    out.write(HTMLFile('', 'Valkyrie Anatomia &ndash;The Origin&ndash;<br>Script', index_html_body.getHTML()).getHTML())
