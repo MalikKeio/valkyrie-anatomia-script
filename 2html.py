@@ -3,7 +3,7 @@
 import os
 import re
 
-from names import CHAPTERS, CHARACTERS, JP, EN
+from names import CHAPTERS, CHARACTERS, JP, EN, SIDE_STORY_CHAPTERS, OTHER_STORIES
 CLASSES = {
     "f": "file",
     "u": "utterance",
@@ -203,24 +203,27 @@ HTML_HOME = "html"
 index_html_body = Div(['file'])
 main_story_div = index_html_body.create_child(["main-story"])
 for chapter_index in CHAPTERS:
-    en_chapter = "en/%d" % chapter_index
+    en_chapter = "en/main/%d" % chapter_index
     chapter_div = main_story_div.create_child(['chapter'])
     title = "%d. %s &mdash; %s" % (chapter_index, CHAPTERS[chapter_index][JP], CHAPTERS[chapter_index][EN])
     chapter_div.create_child(['chapter-title'], title)
     chapter_content_div = chapter_div.create_child(['chapter-content'])
-    for root, dirs, files in os.walk('jp/%d' % chapter_index):
+    for root, dirs, files in os.walk('jp/main/%d' % chapter_index):
         for name in files:
             filejp_path = os.path.join(root, name)
             fileen_path = en_chapter + "/" + name
             html_body = getHTMLForOneQuest(filejp_path, fileen_path)
-            out_folder_path = "%s/%d" % (HTML_HOME, chapter_index)
+            out_folder_path = "%s/main/%d" % (HTML_HOME, chapter_index)
             if not os.path.exists(out_folder_path):
                 os.makedirs(out_folder_path)
             target = "%s/%s.html" % (out_folder_path, name)
-            chapter_content_div.create_child(["subchapter"], '<a href="%d/%s.html">%s</a>' % (chapter_index, name, name.split(',')[0]))
+            chapter_content_div.create_child(["subchapter"], '<a href="main/%d/%s.html">%s</a>' % (chapter_index, name, name.split(',')[0]))
             with open(target, "w") as out:
-                out.write(HTMLFile('../', title, html_body).getHTML())
+                out.write(HTMLFile('../../', title, html_body).getHTML())
     chapter_content_div.sort()
 side_story_div = index_html_body.create_child(["side-story"])
+for chapters in SIDE_STORY_CHAPTERS:
+    pass
+
 with open("%s/index.html" % HTML_HOME, 'w') as out:
     out.write(HTMLFile('', 'Valkyrie Anatomia &ndash;The Origin&ndash;<br>Script', index_html_body.getHTML()).getHTML())
