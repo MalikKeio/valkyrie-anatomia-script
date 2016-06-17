@@ -199,6 +199,20 @@ def getHTMLForOneQuest(filejp, fileen):
         previous_line_empty = False
     return f.getHTML()
 
+def create_subchapters(folder, chapter_content_div, csspath, title):
+    for root, dirs, files in os.walk(folder):
+        for name in files:
+            filejp_path = os.path.join(root, name)
+            fileen_path = filejp_path.replace("jp/", "en/")
+            html_body = getHTMLForOneQuest(filejp_path, fileen_path)
+            out_folder_path = folder.replace("jp/", "%s/" % HTML_HOME)
+            if not os.path.exists(out_folder_path):
+                os.makedirs(out_folder_path)
+            target = "%s/%s.html" % (out_folder_path, name)
+            chapter_content_div.create_child(["subchapter"], '<a href="%s">%s</a>' % (target.replace("%s/" % HTML_HOME, ""), name.split(',')[0]))
+            with open(target, "w") as out:
+                out.write(HTMLFile(csspath, title, html_body).getHTML())
+
 HTML_HOME = "html"
 index_html_body = Div(['file'])
 main_story_div = index_html_body.create_child(["main-story"])
@@ -208,18 +222,7 @@ for chapter_index in CHAPTERS:
     title = "%d. %s &mdash; %s" % (chapter_index, CHAPTERS[chapter_index][JP], CHAPTERS[chapter_index][EN])
     chapter_div.create_child(['chapter-title'], title)
     chapter_content_div = chapter_div.create_child(['chapter-content'])
-    for root, dirs, files in os.walk('jp/main/%d' % chapter_index):
-        for name in files:
-            filejp_path = os.path.join(root, name)
-            fileen_path = en_chapter + "/" + name
-            html_body = getHTMLForOneQuest(filejp_path, fileen_path)
-            out_folder_path = "%s/main/%d" % (HTML_HOME, chapter_index)
-            if not os.path.exists(out_folder_path):
-                os.makedirs(out_folder_path)
-            target = "%s/%s.html" % (out_folder_path, name)
-            chapter_content_div.create_child(["subchapter"], '<a href="main/%d/%s.html">%s</a>' % (chapter_index, name, name.split(',')[0]))
-            with open(target, "w") as out:
-                out.write(HTMLFile('../../', title, html_body).getHTML())
+    create_subchapters('jp/main/%d' % chapter_index, chapter_content_div, '../../', title)
     chapter_content_div.sort()
 side_story_div = index_html_body.create_child(["side-story"])
 for chapters in SIDE_STORY_CHAPTERS:
@@ -233,9 +236,11 @@ for chapters in SIDE_STORY_CHAPTERS:
         title = "%s &mdash; %s" % (einherjar, "")
     chapter_div.create_child(['chapter-title'], title)
     chapter_content_div = chapter_div.create_child(['chapter-content'])
+    story_index = 1
     for stories in chapters[STORIES]:
         story_title = "%s &mdash; %s" % (stories[JP], stories[EN])
         chapter_content_div.create_child(['chapter-subtitle'], story_title)
-
+        create_subchapters('jp/side/%s/%d' % (einherjar,story_index), chapter_content_div, '../../../', title)
+        story_index += 1
 with open("%s/index.html" % HTML_HOME, 'w') as out:
     out.write(HTMLFile('', 'Valkyrie Anatomia &ndash;The Origin&ndash;<br>Script', index_html_body.getHTML()).getHTML())
