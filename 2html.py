@@ -202,7 +202,6 @@ def getHTMLForOneQuest(filejp, fileen):
 HTML_HOME = "html"
 index_html_body = Div(['file'])
 main_story_div = index_html_body.create_child(["main-story"])
-side_story_div = index_html_body.create_child(["side-story"])
 for chapter_index in CHAPTERS:
     en_chapter = "en/%d" % chapter_index
     chapter_div = main_story_div.create_child(['chapter'])
@@ -222,6 +221,6 @@ for chapter_index in CHAPTERS:
             with open(target, "w") as out:
                 out.write(HTMLFile('../', title, html_body).getHTML())
     chapter_content_div.sort()
-index_html_body.sort()
+side_story_div = index_html_body.create_child(["side-story"])
 with open("%s/index.html" % HTML_HOME, 'w') as out:
     out.write(HTMLFile('', 'Valkyrie Anatomia &ndash;The Origin&ndash;<br>Script', index_html_body.getHTML()).getHTML())

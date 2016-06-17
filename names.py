@@ -27,9 +27,97 @@ CHAPTERS = {
     23:["魂の律動：狂った歯車", ""]
 }
 
-SIDE_STORY_CHAPTERS = {}
+EINHERJAR = "EINHERJAR"
+STORIES = "STORIES"
+SIDE_STORY_CHAPTERS = [
+    {EINHERJAR: "那智", STORIES: [
+        ["神託の少女", ""],
+        ["神様の救い", ""]
+    ]},
+    {EINHERJAR: "リウ", STORIES: [
+        ["忘却の竜", ""],
+        ["盗まれた運命", ""]
+    ]},
+    {EINHERJAR: "ノルン", STORIES: [
+        ["運命の歯車", "The Cogs of Destiny"],
+        ["運命の子", "The Fated Girl"]
+    ]},
+    {EINHERJAR: "ルチア", STORIES: [
+        ["母の遺した旋律", ""],
+        ["ルチアの決意", ""]
+    ]},
+    {EINHERJAR: "ヴァルヴァロア", STORIES: [
+        ["", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "ランヴァルド", STORIES: [
+        ["", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "クラウシュ", STORIES: [
+        ["魔の海域", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "クロエ", STORIES: [
+        ["", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "ダリネ", STORIES: [
+        ["", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "アネリアン", STORIES: [
+        ["", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "ジャンヌ", STORIES: [
+        ["", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "イングリット", STORIES: [
+        ["", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "クルト", STORIES: [
+        ["", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "セナ", STORIES: [
+        ["", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "カラドック", STORIES: [
+        ["", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "マクシミリアン", STORIES: [
+        ["", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "カチナ", STORIES: [
+        ["", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "マルヴァイナ", STORIES: [
+        ["", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "アルトフェイル", STORIES: [
+        ["", ""],
+        ["", ""]
+    ]},
+    {EINHERJAR: "フリー", STORIES: [
+        ["試練の道・初級", ""],
+        ["試練の道・中級", ""],
+        ["試練の道・上級", ""]
+    ]}
+]
 
-OTHER_STORIES = {}
+OTHER_STORIES = {
+    1: ["戦乙女再臨！　彼方よりの来訪者", "The Second Advent of the Battle Maiden! A Visitor from Beyond"],
+    2: ["魂の律動：偽るモノ、偽らざるモノ", "Spiritual Concentration: Lies & Truths"],
+    3: ["魂の律動：答えなき祈り", "Spiritual Concentration: Unanswered Prayers"]
+}
 
 CHARACTERS = {
     "？？？": "???",
