@@ -15,8 +15,9 @@ for root, dirs, files in os.walk('jp/'):
             print("[WARN] %s exists!" % target_path)
         else:
             with open(path) as f:
-                if not os.path.exists(target_path):
-                    os.makedirs("/".join(target_path.split('/')[0:-1]))
+                target_dir_path = "/".join(target_path.split('/')[0:-1])
+                if not os.path.exists(target_dir_path):
+                    os.makedirs(target_dir_path)
                 target = open(target_path, "w")
                 for line in f:
                     speaker = line[:-1]

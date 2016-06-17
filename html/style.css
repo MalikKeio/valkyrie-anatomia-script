@@ -36,3 +36,14 @@
 .subchapter {
   margin-left: 20px;
 }
+
+.chapter {
+  padding: 5px
+}
+.main-story, .side-story {
+  padding: 30px 0px
+}
+
+.chapter-subtitle {
+  padding-left: 10px
+}

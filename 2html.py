@@ -3,7 +3,7 @@
 import os
 import re
 
-from names import CHAPTERS, CHARACTERS, JP, EN, SIDE_STORY_CHAPTERS, OTHER_STORIES
+from names import CHAPTERS, CHARACTERS, JP, EN, SIDE_STORY_CHAPTERS, OTHER_STORIES, EINHERJAR, STORIES
 CLASSES = {
     "f": "file",
     "u": "utterance",
@@ -223,7 +223,19 @@ for chapter_index in CHAPTERS:
     chapter_content_div.sort()
 side_story_div = index_html_body.create_child(["side-story"])
 for chapters in SIDE_STORY_CHAPTERS:
-    pass
+    einherjar = chapters[EINHERJAR]
+    en_chapter = "en/side/%s" % einherjar
+    chapter_div = side_story_div.create_child(['chapter'])
+    try:
+        title = "%s &mdash; %s" % (einherjar, CHARACTERS[einherjar])
+    except KeyError:
+        print("[WARN] Unkown Einherjar: %s" % einherjar)
+        title = "%s &mdash; %s" % (einherjar, "")
+    chapter_div.create_child(['chapter-title'], title)
+    chapter_content_div = chapter_div.create_child(['chapter-content'])
+    for stories in chapters[STORIES]:
+        story_title = "%s &mdash; %s" % (stories[JP], stories[EN])
+        chapter_content_div.create_child(['chapter-subtitle'], story_title)
 
 with open("%s/index.html" % HTML_HOME, 'w') as out:
     out.write(HTMLFile('', 'Valkyrie Anatomia &ndash;The Origin&ndash;<br>Script', index_html_body.getHTML()).getHTML())
