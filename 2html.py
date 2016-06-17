@@ -214,16 +214,20 @@ def create_subchapters(folder, chapter_content_div, csspath, title):
                 out.write(HTMLFile(csspath, title, html_body).getHTML())
     chapter_content_div.sort()
 
+def add_simple_chapters(chapters, story_div, namespace):
+    for chapter_index in chapters:
+        en_chapter = "en/%s/%d" % (namespace, chapter_index)
+        chapter_div = story_div.create_child(['chapter'])
+        title = "%d. %s &mdash; %s" % (chapter_index, CHAPTERS[chapter_index][JP], CHAPTERS[chapter_index][EN])
+        chapter_div.create_child(['chapter-title'], title)
+        chapter_content_div = chapter_div.create_child(['chapter-content'])
+        create_subchapters('jp/%s/%d' % (namespace, chapter_index), chapter_content_div, '../../', title)
+
+
 HTML_HOME = "html"
 index_html_body = Div(['file'])
 main_story_div = index_html_body.create_child(["main-story"])
-for chapter_index in CHAPTERS:
-    en_chapter = "en/main/%d" % chapter_index
-    chapter_div = main_story_div.create_child(['chapter'])
-    title = "%d. %s &mdash; %s" % (chapter_index, CHAPTERS[chapter_index][JP], CHAPTERS[chapter_index][EN])
-    chapter_div.create_child(['chapter-title'], title)
-    chapter_content_div = chapter_div.create_child(['chapter-content'])
-    create_subchapters('jp/main/%d' % chapter_index, chapter_content_div, '../../', title)
+add_simple_chapters(CHAPTERS, main_story_div, 'main')
 side_story_div = index_html_body.create_child(["side-story"])
 for chapters in SIDE_STORY_CHAPTERS:
     einherjar = chapters[EINHERJAR]
@@ -232,7 +236,7 @@ for chapters in SIDE_STORY_CHAPTERS:
     try:
         title = "%s &mdash; %s" % (einherjar, CHARACTERS[einherjar])
     except KeyError:
-        print("[WARN] Unkown Einherjar: %s" % einherjar)
+        print("[WARN] Unknown Einherjar: %s" % einherjar)
         title = "%s &mdash; %s" % (einherjar, "")
     chapter_div.create_child(['chapter-title'], title)
     chapter_content_div = chapter_div.create_child(['chapter-content'])
@@ -243,5 +247,7 @@ for chapters in SIDE_STORY_CHAPTERS:
         chapter_content_subdiv = chapter_content_div.create_child()
         create_subchapters('jp/side/%s/%d' % (einherjar,story_index), chapter_content_subdiv, '../../../', title)
         story_index += 1
+other_stories_div = index_html_body.create_child(["other-stories"])
+add_simple_chapters(OTHER_STORIES, other_stories_div, 'other')
 with open("%s/index.html" % HTML_HOME, 'w') as out:
     out.write(HTMLFile('', 'Valkyrie Anatomia &ndash;The Origin&ndash;<br>Script', index_html_body.getHTML()).getHTML())
