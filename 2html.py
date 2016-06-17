@@ -200,8 +200,10 @@ def getHTMLForOneQuest(filejp, fileen):
     return f.getHTML()
 
 def create_subchapters(folder, chapter_content_div, csspath, title):
+    found = False
     for root, dirs, files in os.walk(folder):
         for name in files:
+            found = True
             filejp_path = os.path.join(root, name)
             fileen_path = filejp_path.replace("jp/", "en/")
             html_body = getHTMLForOneQuest(filejp_path, fileen_path)
@@ -213,6 +215,9 @@ def create_subchapters(folder, chapter_content_div, csspath, title):
             with open(target, "w") as out:
                 out.write(HTMLFile(csspath, title, html_body).getHTML())
     chapter_content_div.sort()
+    if found:
+        global chapter_count
+        chapter_count += 1
 
 def add_simple_chapters(chapters, story_div, namespace):
     for chapter_index in chapters:
@@ -226,6 +231,8 @@ def add_simple_chapters(chapters, story_div, namespace):
 
 HTML_HOME = "html"
 index_html_body = Div(['file'])
+progression_div = index_html_body.create_child(["progression"])
+chapter_count = 0
 main_story_div = index_html_body.create_child(["main-story"])
 add_simple_chapters(CHAPTERS, main_story_div, 'main')
 side_story_div = index_html_body.create_child(["side-story"])
@@ -249,5 +256,7 @@ for chapters in SIDE_STORY_CHAPTERS:
         story_index += 1
 other_stories_div = index_html_body.create_child(["other-stories"])
 add_simple_chapters(OTHER_STORIES, other_stories_div, 'other')
+CHAPTER_TOTAL_COUNT = len(CHAPTERS) + 2*len(SIDE_STORY_CHAPTERS) + 1 + len(OTHER_STORIES)
+progression_div.innerHTML = "Script Progression: %d/%d" % (chapter_count, CHAPTER_TOTAL_COUNT)
 with open("%s/index.html" % HTML_HOME, 'w') as out:
     out.write(HTMLFile('', 'Valkyrie Anatomia &ndash;The Origin&ndash;<br>Script', index_html_body.getHTML()).getHTML())
