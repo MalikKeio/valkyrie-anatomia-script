@@ -4,11 +4,11 @@ import os
 
 from names import CHAPTERS, CHARACTERS
 
-for chapter in CHAPTERS:
-    en_chapter = "en/%s" % CHAPTERS[chapter]
+for chapter_index in CHAPTERS:
+    en_chapter = "en/%d" % chapter_index
     if not os.path.exists(en_chapter):
         os.makedirs(en_chapter)
-    for root, dirs, files in os.walk('jp/%s' % chapter):
+    for root, dirs, files in os.walk('jp/%s' % chapter_index):
         for name in files:
             path = os.path.join(root, name)
             target_path = en_chapter + "/" + name
