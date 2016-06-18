@@ -41,8 +41,8 @@
 .chapter {
   padding: 5px
 }
-.main-story, .side-story {
-  padding: 30px 0px
+.main-story, .side-story, .other-stories {
+  padding: 30px 0px 0px 0px;
 }
 
 .chapter-subtitle {
@@ -57,4 +57,19 @@
 .translated::after {
   content: " (translated)";
   font-weight: bold;
+}
+.main-story::before {
+  content: "Main Story";
+  font-size: 150%;
+  font-style: italic;
+}
+.side-story::before {
+  content: "Side Story";
+  font-size: 150%;
+  font-style: italic;
+}
+.other-stories::before {
+  content: "Other Stories";
+  font-size: 150%;
+  font-style: italic;
 }

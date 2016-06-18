@@ -54,52 +54,52 @@ SIDE_STORY_CHAPTERS = [
         ["ルチアの決意", ""]
     ]},
     {EINHERJAR: "ヴァルヴァロア", STORIES: [
-        ["", ""],
-        ["", ""]
+        ["新大陸を目指せ", ""],
+        ["老兵の教え", ""]
     ]},
     {EINHERJAR: "ランヴァルド", STORIES: [
-        ["", ""],
-        ["", ""]
+        ["神と人", ""],
+        ["死者の村", ""]
     ]},
     {EINHERJAR: "クラウシュ", STORIES: [
         ["魔の海域", ""],
         ["", ""]
     ]},
     {EINHERJAR: "クロエ", STORIES: [
-        ["", ""],
-        ["", ""]
+        ["不死者を残滅せよ", ""],
+        ["湖に潜むドラゴンを討伐せよ", ""]
     ]},
     {EINHERJAR: "ダリネ", STORIES: [
-        ["", ""],
-        ["", ""]
+        ["出既損ないの反魂香", ""],
+        ["再会", ""]
     ]},
     {EINHERJAR: "アネリアン", STORIES: [
-        ["", ""],
-        ["", ""]
+        ["力の代償", ""],
+        ["偽りの魔法", ""]
     ]},
     {EINHERJAR: "ジャンヌ", STORIES: [
-        ["", ""],
-        ["", ""]
-    ]},
-    {EINHERJAR: "イングリット", STORIES: [
-        ["", ""],
-        ["", ""]
-    ]},
-    {EINHERJAR: "クルト", STORIES: [
-        ["", ""],
-        ["", ""]
-    ]},
-    {EINHERJAR: "セナ", STORIES: [
-        ["", ""],
-        ["", ""]
-    ]},
-    {EINHERJAR: "カラドック", STORIES: [
-        ["", ""],
-        ["", ""]
+        ["この身に纏うは", ""],
+        ["生き様と死に様", "How to Live and How to Die"]
     ]},
     {EINHERJAR: "マクシミリアン", STORIES: [
-        ["", ""],
-        ["", ""]
+        ["連れ去られた少女を救え", "Save the Abducted Girl"],
+        ["父の背中", ""]
+    ]},
+    {EINHERJAR: "イングリット", STORIES: [
+        ["連銀術師の野望を阻止せよ", ""],
+        ["囚われた人魚を救え", "Save the Captured Mermaid"]
+    ]},
+    {EINHERJAR: "クルト", STORIES: [
+        ["夢の残骸", "Remnants of Dream"],
+        ["夢のつづき", "The Dream Continues"]
+    ]},
+    {EINHERJAR: "セナ", STORIES: [
+        ["闘う理由", ""],
+        ["貴婦人の構え", ""]
+    ]},
+    {EINHERJAR: "カラドック", STORIES: [
+        ["伝説の剣を求めて", ""],
+        ["剣の神", "The God of the Sword"]
     ]},
     {EINHERJAR: "カチナ", STORIES: [
         ["", ""],
