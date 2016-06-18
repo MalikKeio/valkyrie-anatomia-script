@@ -262,6 +262,6 @@ for chapters in SIDE_STORY_CHAPTERS:
 other_stories_div = index_html_body.create_child(["other-stories"])
 add_simple_chapters(OTHER_STORIES, other_stories_div, 'other')
 CHAPTER_TOTAL_COUNT = len(CHAPTERS) + 2*len(SIDE_STORY_CHAPTERS) + 1 + len(OTHER_STORIES)
-progression_div.innerHTML = "Script Progression: %d/%d" % (chapter_count, CHAPTER_TOTAL_COUNT)
+progression_div.innerHTML = "Transcript Progression: %d/%d" % (chapter_count, CHAPTER_TOTAL_COUNT)
 with open("%s/index.html" % HTML_HOME, 'w') as out:
     out.write(HTMLFile('', 'Valkyrie Anatomia &ndash;The Origin&ndash;<br>Script', index_html_body.getHTML()).getHTML())
