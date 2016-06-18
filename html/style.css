@@ -36,3 +36,24 @@
 .subchapter {
   margin-left: 20px;
 }
+
+.chapter {
+  padding: 5px
+}
+.main-story, .side-story {
+  padding: 30px 0px
+}
+
+.chapter-subtitle {
+  padding-left: 10px
+}
+
+.in-progress::after {
+  content: " (translation in progress)";
+  font-weight: bold;
+  color: grey;
+}
+.translated::after {
+  content: " (translated)";
+  font-weight: bold;
+}

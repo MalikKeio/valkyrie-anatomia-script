@@ -3,7 +3,7 @@
 import os
 import re
 
-from names import CHAPTERS, CHARACTERS
+from names import CHAPTERS, CHARACTERS, JP, EN, SIDE_STORY_CHAPTERS, OTHER_STORIES, EINHERJAR, STORIES, STATUS, TRANSLATED, INPROGRESS
 CLASSES = {
     "f": "file",
     "u": "utterance",
@@ -199,30 +199,69 @@ def getHTMLForOneQuest(filejp, fileen):
         previous_line_empty = False
     return f.getHTML()
 
-HTML_HOME = "html"
-index_html_body = Div(['file'])
-main_story_div = index_html_body.create_child(["main-story"])
-side_story_div = index_html_body.create_child(["side-story"])
-for chapter in CHAPTERS:
-    index = int(chapter.split('.')[0])
-    en_chapter = "en/%s" % CHAPTERS[chapter]
-    chapter_div = main_story_div.create_child(['chapter'])
-    title = "%s &mdash; %s" % (chapter, CHAPTERS[chapter].split('.')[1])
-    chapter_div.create_child(['chapter-title'], title)
-    chapter_content_div = chapter_div.create_child(['chapter-content'])
-    for root, dirs, files in os.walk('jp/%s' % chapter):
+def create_subchapters(folder, chapter_content_div, csspath, title):
+    found = False
+    for root, dirs, files in os.walk(folder):
         for name in files:
+            found = True
             filejp_path = os.path.join(root, name)
-            fileen_path = en_chapter + "/" + name
+            fileen_path = filejp_path.replace("jp/", "en/")
             html_body = getHTMLForOneQuest(filejp_path, fileen_path)
-            out_folder_path = "%s/%d" % (HTML_HOME, index)
+            out_folder_path = folder.replace("jp/", "%s/" % HTML_HOME)
             if not os.path.exists(out_folder_path):
                 os.makedirs(out_folder_path)
             target = "%s/%s.html" % (out_folder_path, name)
-            chapter_content_div.create_child(["subchapter"], '<a href="%d/%s.html">%s</a>' % (index, name, name.split(',')[0]))
+            chapter_content_div.create_child(["subchapter"], '<a href="%s">%s</a>' % (target.replace("%s/" % HTML_HOME, ""), name.split(',')[0]))
             with open(target, "w") as out:
-                out.write(HTMLFile('../', title, html_body).getHTML())
+                out.write(HTMLFile(csspath, title, html_body).getHTML())
     chapter_content_div.sort()
-index_html_body.sort()
+    if found:
+        global chapter_count
+        chapter_count += 1
+
+def add_simple_chapters(chapters, story_div, namespace):
+    for chapter_index in chapters:
+        en_chapter = "en/%s/%d" % (namespace, chapter_index)
+        chapter_div = story_div.create_child(['chapter'])
+        title = "%d. %s &mdash; %s" % (chapter_index, CHAPTERS[chapter_index][JP], CHAPTERS[chapter_index][EN])
+        chapter_div_class = ['chapter-title']
+        if CHAPTERS[chapter_index][STATUS] is TRANSLATED:
+            chapter_div_class.append('translated')
+        elif CHAPTERS[chapter_index][STATUS] is INPROGRESS:
+            chapter_div_class.append('in-progress')
+        chapter_div.create_child(chapter_div_class, title)
+        chapter_content_div = chapter_div.create_child(['chapter-content'])
+        create_subchapters('jp/%s/%d' % (namespace, chapter_index), chapter_content_div, '../../', title)
+
+
+HTML_HOME = "html"
+index_html_body = Div(['file'])
+progression_div = index_html_body.create_child(["progression"])
+chapter_count = 0
+main_story_div = index_html_body.create_child(["main-story"])
+add_simple_chapters(CHAPTERS, main_story_div, 'main')
+side_story_div = index_html_body.create_child(["side-story"])
+for chapters in SIDE_STORY_CHAPTERS:
+    einherjar = chapters[EINHERJAR]
+    en_chapter = "en/side/%s" % einherjar
+    chapter_div = side_story_div.create_child(['chapter'])
+    try:
+        title = "%s &mdash; %s" % (einherjar, CHARACTERS[einherjar])
+    except KeyError:
+        print("[WARN] Unknown Einherjar: %s" % einherjar)
+        title = "%s &mdash; %s" % (einherjar, "")
+    chapter_div.create_child(['chapter-title'], title)
+    chapter_content_div = chapter_div.create_child(['chapter-content'])
+    story_index = 1
+    for stories in chapters[STORIES]:
+        story_title = "%s &mdash; %s" % (stories[JP], stories[EN])
+        chapter_content_div.create_child(['chapter-subtitle'], story_title)
+        chapter_content_subdiv = chapter_content_div.create_child()
+        create_subchapters('jp/side/%s/%d' % (einherjar,story_index), chapter_content_subdiv, '../../../', title)
+        story_index += 1
+other_stories_div = index_html_body.create_child(["other-stories"])
+add_simple_chapters(OTHER_STORIES, other_stories_div, 'other')
+CHAPTER_TOTAL_COUNT = len(CHAPTERS) + 2*len(SIDE_STORY_CHAPTERS) + 1 + len(OTHER_STORIES)
+progression_div.innerHTML = "Script Progression: %d/%d" % (chapter_count, CHAPTER_TOTAL_COUNT)
 with open("%s/index.html" % HTML_HOME, 'w') as out:
     out.write(HTMLFile('', 'Valkyrie Anatomia &ndash;The Origin&ndash;<br>Script', index_html_body.getHTML()).getHTML())

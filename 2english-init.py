@@ -4,22 +4,24 @@ import os
 
 from names import CHAPTERS, CHARACTERS
 
-for chapter in CHAPTERS:
-    en_chapter = "en/%s" % CHAPTERS[chapter]
-    if not os.path.exists(en_chapter):
-        os.makedirs(en_chapter)
-    for root, dirs, files in os.walk('jp/%s' % chapter):
-        for name in files:
-            path = os.path.join(root, name)
-            target_path = en_chapter + "/" + name
-            if os.path.exists(target_path):
-                print("[WARN] %s exists!" % target_path)
-            else:
-                with open(path) as f:
-                    target = open(en_chapter + "/" + name, "w")
-                    for line in f:
-                        speaker = line[:-1]
-                        if speaker in CHARACTERS:
-                            target.write("%s\n" % CHARACTERS[speaker])
-                        else:
-                            target.write(line)
+en_chapter = "en/"
+if not os.path.exists(en_chapter):
+    os.makedirs(en_chapter)
+for root, dirs, files in os.walk('jp/'):
+    for name in files:
+        path = os.path.join(root, name)
+        target_path = path.replace('jp/', 'en/')
+        if os.path.exists(target_path):
+            print("[WARN] %s exists!" % target_path)
+        else:
+            with open(path) as f:
+                target_dir_path = "/".join(target_path.split('/')[0:-1])
+                if not os.path.exists(target_dir_path):
+                    os.makedirs(target_dir_path)
+                target = open(target_path, "w")
+                for line in f:
+                    speaker = line[:-1]
+                    if speaker in CHARACTERS:
+                        target.write("%s\n" % CHARACTERS[speaker])
+                    else:
+                        target.write(line)
