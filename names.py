@@ -114,9 +114,9 @@ SIDE_STORY_CHAPTERS = [
         ["", ""]
     ]},
     {EINHERJAR: "フリー", STORIES: [
-        ["試練の道・初級", ""],
-        ["試練の道・中級", ""],
-        ["試練の道・上級", ""]
+        ["試練の道・初級", "Path of Trials: Elementary Level", TRANSLATED],
+        ["試練の道・中級", "Path of Trials: Middle Level", TRANSLATED],
+        ["試練の道・上級", "Path of Trials: Upper Level", TRANSLATED]
     ]}
 ]
 

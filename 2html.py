@@ -219,17 +219,20 @@ def create_subchapters(folder, chapter_content_div, csspath, title):
         global chapter_count
         chapter_count += 1
 
+def add_progress_to_chapter(chapter_div_class, chapter_div, chapter, title):
+    if chapter[STATUS] is TRANSLATED:
+        chapter_div_class.append('translated')
+    elif chapter[STATUS] is INPROGRESS:
+        chapter_div_class.append('in-progress')
+    chapter_div.create_child(chapter_div_class, title)
+
+
 def add_simple_chapters(chapters, story_div, namespace):
     for chapter_index in chapters:
         en_chapter = "en/%s/%d" % (namespace, chapter_index)
         chapter_div = story_div.create_child(['chapter'])
         title = "%d. %s &mdash; %s" % (chapter_index, chapters[chapter_index][JP], chapters[chapter_index][EN])
-        chapter_div_class = ['chapter-title']
-        if chapters[chapter_index][STATUS] is TRANSLATED:
-            chapter_div_class.append('translated')
-        elif chapters[chapter_index][STATUS] is INPROGRESS:
-            chapter_div_class.append('in-progress')
-        chapter_div.create_child(chapter_div_class, title)
+        add_progress_to_chapter(['chapter-title'], chapter_div, chapters[chapter_index], title)
         chapter_content_div = chapter_div.create_child(['chapter-content'])
         create_subchapters('jp/%s/%d' % (namespace, chapter_index), chapter_content_div, '../../', title)
 
@@ -253,9 +256,9 @@ for chapters in SIDE_STORY_CHAPTERS:
     chapter_div.create_child(['chapter-title'], title)
     chapter_content_div = chapter_div.create_child(['chapter-content'])
     story_index = 1
-    for stories in chapters[STORIES]:
-        story_title = "%s &mdash; %s" % (stories[JP], stories[EN])
-        chapter_content_div.create_child(['chapter-subtitle'], story_title)
+    for story in chapters[STORIES]:
+        story_title = "%s &mdash; %s" % (story[JP], story[EN])
+        add_progress_to_chapter(['chapter-subtitle'], chapter_content_div, story, story_title)
         chapter_content_subdiv = chapter_content_div.create_child()
         create_subchapters('jp/side/%s/%d' % (einherjar,story_index), chapter_content_subdiv, '../../../', title)
         story_index += 1
