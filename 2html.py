@@ -223,11 +223,11 @@ def add_simple_chapters(chapters, story_div, namespace):
     for chapter_index in chapters:
         en_chapter = "en/%s/%d" % (namespace, chapter_index)
         chapter_div = story_div.create_child(['chapter'])
-        title = "%d. %s &mdash; %s" % (chapter_index, CHAPTERS[chapter_index][JP], CHAPTERS[chapter_index][EN])
+        title = "%d. %s &mdash; %s" % (chapter_index, chapters[chapter_index][JP], chapters[chapter_index][EN])
         chapter_div_class = ['chapter-title']
-        if CHAPTERS[chapter_index][STATUS] is TRANSLATED:
+        if chapters[chapter_index][STATUS] is TRANSLATED:
             chapter_div_class.append('translated')
-        elif CHAPTERS[chapter_index][STATUS] is INPROGRESS:
+        elif chapters[chapter_index][STATUS] is INPROGRESS:
             chapter_div_class.append('in-progress')
         chapter_div.create_child(chapter_div_class, title)
         chapter_content_div = chapter_div.create_child(['chapter-content'])
