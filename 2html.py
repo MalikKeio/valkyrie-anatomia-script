@@ -21,6 +21,8 @@ class Content:
     def __init__(self):
         self.lines = []
     def add_line(self, line):
+        # Remove comments //
+        line = line.split('//')[0]
         self.lines.append(line)
     def getHTML(self):
         html = '<div class="%s">' % CLASSES['c']
