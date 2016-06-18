@@ -121,7 +121,7 @@ SIDE_STORY_CHAPTERS = [
 ]
 
 OTHER_STORIES = {
-    1: ["戦乙女再臨！　彼方よりの来訪者", "The Second Advent of the Battle Maiden! A Visitor from Beyond"],
+    1: ["戦乙女再臨！　彼方よりの来訪者", "The Second Advent of the Battle Maiden! A Visitor from Beyond", TRANSLATED],
     2: ["魂の律動：偽るモノ、偽らざるモノ", "Spiritual Concentration: Lies and Truths"],
     3: ["魂の律動：答えなき祈り", "Spiritual Concentration: Unanswered Prayers"]
 }
