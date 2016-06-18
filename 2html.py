@@ -222,8 +222,11 @@ def create_subchapters(folder, chapter_content_div, csspath, title):
 def add_progress_to_chapter(chapter_div_class, chapter_div, chapter, title):
     if chapter[STATUS] is TRANSLATED:
         chapter_div_class.append('translated')
+        translation_completion['count'] += 1
     elif chapter[STATUS] is INPROGRESS:
         chapter_div_class.append('in-progress')
+        translation_completion['count'] += 0.5
+    translation_completion['max'] += 1
     chapter_div.create_child(chapter_div_class, title)
 
 
@@ -241,6 +244,8 @@ HTML_HOME = "html"
 index_html_body = Div(['file'])
 progression_div = index_html_body.create_child(["progression"])
 chapter_count = 0
+# The -3 are there to ignore the 3 試練の道 (which contain no text)
+translation_completion = {'max': -3, 'count': -3}
 main_story_div = index_html_body.create_child(["main-story"])
 add_simple_chapters(CHAPTERS, main_story_div, 'main')
 side_story_div = index_html_body.create_child(["side-story"])
@@ -265,6 +270,8 @@ for chapters in SIDE_STORY_CHAPTERS:
 other_stories_div = index_html_body.create_child(["other-stories"])
 add_simple_chapters(OTHER_STORIES, other_stories_div, 'other')
 CHAPTER_TOTAL_COUNT = len(CHAPTERS) + 2*len(SIDE_STORY_CHAPTERS) + 1 + len(OTHER_STORIES)
-progression_div.innerHTML = "Transcript Progression: %d/%d" % (chapter_count, CHAPTER_TOTAL_COUNT)
+progression_div.innerHTML = "Transcript Progression: %.2f%%<br>Translation Progression: %.2f%%" % (100*(chapter_count/CHAPTER_TOTAL_COUNT), 100*(translation_completion['count']/translation_completion['max']))
+print("Transcript Progression: %d/%d" % (chapter_count, CHAPTER_TOTAL_COUNT))
+print("Translation Progression: %.1f/%d" % (translation_completion['count'], translation_completion['max']))
 with open("%s/index.html" % HTML_HOME, 'w') as out:
     out.write(HTMLFile('', 'Valkyrie Anatomia &ndash;The Origin&ndash;<br>Script', index_html_body.getHTML()).getHTML())
