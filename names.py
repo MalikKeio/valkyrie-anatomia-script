@@ -1,8 +1,11 @@
 JP = 0
 EN = 1
+STATUS = -1
+TRANSLATED = 1
+INPROGRESS = 2
 
 CHAPTERS = {
-    1: ["戦乙女の目覚め", "The Awakening of the Battle Maiden"],
+    1: ["戦乙女の目覚め", "The Awakening of the Battle Maiden", INPROGRESS],
     2: ["魂の律動：剣を振る理由", "Spiritual Concentration: What to Wield the Sword For"],
     3: ["魂の律動：禁じられた歌声", ""],
     4: ["運命の女神", ""],

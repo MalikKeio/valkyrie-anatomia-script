@@ -47,3 +47,13 @@
 .chapter-subtitle {
   padding-left: 10px
 }
+
+.in-progress::after {
+  content: " (translation in progress)";
+  font-weight: bold;
+  color: grey;
+}
+.translated::after {
+  content: " (translated)";
+  font-weight: bold;
+}
