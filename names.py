@@ -37,6 +37,10 @@ CHAPTERS = {
 EINHERJAR = "EINHERJAR"
 STORIES = "STORIES"
 SIDE_STORY_CHAPTERS = [
+    {EINHERJAR: "バルゴ", STORIES: [
+        ["戦い続ける意味", ""],
+        ["業を背負いし者", ""]
+    ]},
     {EINHERJAR: "那智", STORIES: [
         ["神託の少女", ""],
         ["神様の救い", ""]
@@ -63,7 +67,7 @@ SIDE_STORY_CHAPTERS = [
     ]},
     {EINHERJAR: "クラウシュ", STORIES: [
         ["魔の海域", ""],
-        ["", ""]
+        ["鎧に宿る霊", ""]
     ]},
     {EINHERJAR: "クロエ", STORIES: [
         ["不死者を残滅せよ", ""],
@@ -102,16 +106,16 @@ SIDE_STORY_CHAPTERS = [
         ["剣の神", "The God of the Sword"]
     ]},
     {EINHERJAR: "カチナ", STORIES: [
-        ["", ""],
-        ["", ""]
+        ["災いの種", ""],
+        ["神々の置き土産", ""]
     ]},
     {EINHERJAR: "マルヴァイナ", STORIES: [
-        ["", ""],
-        ["", ""]
+        ["亡国の騎士団", ""],
+        ["迫る危機", ""]
     ]},
     {EINHERJAR: "アルトフェイル", STORIES: [
-        ["", ""],
-        ["", ""]
+        ["森に消えた兄の行方", ""],
+        ["超古代文明の謎を解き明かせ", ""]
     ]},
     {EINHERJAR: "フリー", STORIES: [
         ["試練の道・初級", "Path of Trials: Elementary Level", TRANSLATED],

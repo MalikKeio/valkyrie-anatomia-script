@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     // configure jshint to validate js files -----------------------------------
     watch: {
       scripts: {
-        files: ['**/*.vp'],
+        files: ['**/*.vp', 'names.py'],
         tasks: ['shell'],
         options: {
           spawn: false,
