@@ -151,6 +151,11 @@ CHARACTERS = {
     "ガラの悪い客２": "Ill-bred customer 2"
 }
 CHARACTERS.update({
+    # Another tricky name. バルゴ is the common transcription of "Virgo" (the zodiac
+    # sign). But naming a heavy manly warrior that deals dark damage Virgo would
+    # sound odd, wouldn't it? Or maybe it shows the complexity of his character
+    # *chuckles*.
+    "バルゴ": "Virgo",
     "那智": "Nachi",
     # Liu sounds Chinese. It could be Riu, I do not really see any difference.
     "リウ": "Liu",
