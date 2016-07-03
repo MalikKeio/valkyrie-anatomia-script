@@ -245,7 +245,7 @@ Zephyros
 Odin
 	Hope?
 Zephyros
-	This is the new land for the Æssir.
+	This is the new land for the Æsir.
 	Please restore the Æsir.
 Odin
 	Restore? You're dreaming.
@@ -275,7 +275,7 @@ Zephyros
 Odin
 	Midgard? The dwelling place of humans?
 Zephyros
-	There, you will find a mountain of flame that scorches even the skyes.
+	There, you will find a fiery mountain that scorches even the skyes.
 	You must make regain consciousness to the One resting there.
 Odin
 	Is it a god?
@@ -290,7 +290,7 @@ Odin
 	Really? Valkyrja?
 Zephyros
 	I will stay here and gain time.
-	You will go forth to the mountain of flame in Midgard.
+	You will go forth to the fiery mountain in Midgard.
 Odin
 	Why do you know so many things I've never even heard of?
 Zephyros
@@ -378,89 +378,89 @@ Zephyros
 ---
 
 ???
-	立ち止まれ･･････。
-	これより先へ行くことはまかりならぬ。
+	Halt!
+	None shall go further this way.
 Odin
-	通せ。
+	You're in the way.
 ???
-	神々の命でここを守っている。
-	何人たりとてこの山を越えることまかりならぬ。
+	We were ordered by the gods to protect this place.
+	Whosoever you may be, none is allowed to go further in the mountain.
 Odin
-	バカなカラスどもよ。悪ふざけはやめろ！
+	Stupid ravens! Enough of this prank!
 Raven 1
-	冗談だよ！
+	That's a joke!
 Raven 1
-	ねえ、どこへ行くの？
-	ここを抜けるとマグマしかないよ？
+	Hey, where are you going?
+	There's nothing but lava out there.
 Raven 2
-	オーディン様！　そのお姿はいかがされました？
+	Lord Odin! What happened to your godly figure!
 Odin
-	お喋りをしている時間はない。
+	I have no time for idle talk.
 Raven 1
-	オーディン様はご機嫌斜めだね？
-	いったいどうしたの？
+	Lord Odin, are you in a bad mood?
+	What happened?
 Odin
-	フギン、ムニン！　貴様らはわしの手足であろう。
-	状況を把握しておらぬのか？
+	Huginn! Muginn! You lots are like my limbs.
+	Don't you grasp the current situation?
 Huginn
-	我ら、探索に出ておりましたので、
-	面目次第もございません。
+	We were out scouting.
+	No word can describe our utmost shame.
 Odin
-	え〜い。バタバタと煩い！
-	貴様らには人間の体を与えておるだろう！
+	Hey! Your flapping is getting on my nerves!
+	Don't you remember I gave a human body!
 Huginn
-	これでよろしゅうございますか？
+	Is it fine this way?
 Muninn
-	人間の体はムズムズするんだもんなぁ。
+	It always feels itchy everywhere when in my human body.
 Odin
-	よし、付いてこい。
+	Good, follow me.
 Huginn
-	ここはどこですか？
+	What is this place?
 Odin
-	炎の山だ･･････神々の秘宝を守っている。
+	The fiery mountain. It protects a secret treasure of the gods.
 Muninn
-	財宝があるの？
+	Is there a treasure?
 Odin
-	炎の扉を開きにまいったのだ･･････邪魔するな。
-	炎よ静まれ！！
+	I came to open the fiery gates. Don't get in my way.
+	O flames! Let you abate!
 Muninn
-	あっち！！
+	Ouch!
 Odin
-	どいていろ。火傷するぞ。
+	Move it if you don't want to get roasted.
 Muninn
-	ね！　どんな宝物があるの？　宝石？
+	Hey! What kind of treasure is there here? Jewels?
 Odin
-	もっとすごいものだ。
+	Not as paltry as that.
 Muninn
-	人？　この人･･････寝てるの？
+	A human? Is this human sleeping?
 Huginn
-	人ではない･･････高位の精神体だ･･････。
+	She's not a human. She's a higher spiritual being.
 Muninn
-	こうい･･････の？？
+	A higher what?
 Huginn
-	いいから黙っていろ。
+	Just shut up.
 Odin
-	目覚めよ。
-	･･････戦乙女レナス・ヴァルキュリアよ。
+	Awaken.
+	Battle Maiden, Lenneth Valkyrja.
 Muninn
-	レナス・ヴァルキュリア？？
+	Lenneth Valkyrja??
 
-		目覚めよ･･････。
+		Awaken.
 
-		誰だ･･････。
+		Who is it?
 
-		目覚めよ･･････ヴァルキュリア。
+		Awaken. Valkyrja.
 
-		誰だ･･････私を呼び起こすのは･･････
-		眠らせておいてくれ･･････
+		Who is it? Who is pulling me out of my slumber?
+		Leave me alone.
 
-		アース神族最高神オーディンの名において、
-		目覚めることを命ず。
+		In my name, Odin, Ruler of the Æsir, Greatest of the Gods,
+		I order you to awaken.
 
-		オーディン･･････。
+		Odin...
 
-		目覚めよ･･････
-		戦乙女　レナス・ヴァルキュリア。
+		Awaken.
+		Battle Maiden, Lenneth Valkyrja.
 
 Lenneth
 	お前は･･････。
