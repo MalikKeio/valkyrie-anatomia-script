@@ -37,6 +37,9 @@ CHAPTERS = {
 EINHERJAR = "EINHERJAR"
 STORIES = "STORIES"
 SIDE_STORY_CHAPTERS = [
+    {EINHERJAR: "アーリィ", STORIES: [
+        ["漆黒の戦乙女", "The Black Battle Maiden", INPROGRESS]
+    ]},
     {EINHERJAR: "バルゴ", STORIES: [
         ["戦い続ける意味", ""],
         ["業を背負いし者", ""]
@@ -151,6 +154,7 @@ CHARACTERS = {
     "ガラの悪い客２": "Ill-bred customer 2"
 }
 CHARACTERS.update({
+    "アーリィ": "Hrist",
     # Another tricky name. バルゴ is the common transcription of "Virgo" (the zodiac
     # sign). But naming a heavy manly warrior that deals dark damage Virgo would
     # sound odd, wouldn't it? Or maybe it shows the complexity of his character

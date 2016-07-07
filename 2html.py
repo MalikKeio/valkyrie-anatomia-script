@@ -281,7 +281,7 @@ for chapters in SIDE_STORY_CHAPTERS:
         story_index += 1
 other_stories_div = index_html_body.create_child(["other-stories"])
 add_simple_chapters(OTHER_STORIES, other_stories_div, 'other')
-CHAPTER_TOTAL_COUNT = len(CHAPTERS) + 2*len(SIDE_STORY_CHAPTERS) + 1 + len(OTHER_STORIES)
+CHAPTER_TOTAL_COUNT = len(CHAPTERS) + 2*len(SIDE_STORY_CHAPTERS) + len(OTHER_STORIES)
 progression_div.innerHTML = "Transcript Progression: %.2f%%<br>Translation Progression: %.2f%%" % (100*(chapter_count/CHAPTER_TOTAL_COUNT), 100*(translation_completion['count']/translation_completion['max']))
 print("Transcript Progression: %d/%d" % (chapter_count, CHAPTER_TOTAL_COUNT))
 print("Translation Progression: %.1f/%d" % (translation_completion['count'], translation_completion['max']))
