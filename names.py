@@ -38,7 +38,7 @@ EINHERJAR = "EINHERJAR"
 STORIES = "STORIES"
 SIDE_STORY_CHAPTERS = [
     {EINHERJAR: "アーリィ", STORIES: [
-        ["漆黒の戦乙女", "The Black Battle Maiden", INPROGRESS]
+        ["漆黒の戦乙女", "The Black Battle Maiden", TRANSLATED]
     ]},
     {EINHERJAR: "バルゴ", STORIES: [
         ["戦い続ける意味", ""],
@@ -130,7 +130,8 @@ SIDE_STORY_CHAPTERS = [
 OTHER_STORIES = {
     1: ["戦乙女再臨！　彼方よりの来訪者", "The Second Advent of the Battle Maiden! A Visitor from Beyond", TRANSLATED],
     2: ["魂の律動：偽るモノ、偽らざるモノ", "Spiritual Concentration: Lies and Truths"],
-    3: ["魂の律動：答えなき祈り", "Spiritual Concentration: Unanswered Prayers"]
+    3: ["魂の律動：答えなき祈り", "Spiritual Concentration: Unanswered Prayers"],
+    4: ["ヴァルハラ２", "Valhalla 2"] #FIXME There was some text in the first battle.
 }
 
 CHARACTERS = {
