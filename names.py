@@ -7,7 +7,7 @@ NOSTORY = 3
 
 CHAPTERS = {
     1: ["戦乙女の目覚め", "The Awakening of the Battle Maiden", TRANSLATED],
-    2: ["魂の律動：剣を振る理由", "Spiritual Concentration: What to Wield the Sword For"],
+    2: ["魂の律動：剣を振る理由", "Spiritual Concentration: What to Wield the Sword For", INPROGRESS],
     3: ["魂の律動：禁じられた歌声", "Spiritual Concentration: Forbidden Voice"],
     4: ["運命の女神", "The Goddess of Destiny"],
     5: ["魂の律動：見果てぬ夢は海を越えて", "Spiritual Concentration: An Unfulfilled Dream Crosses the Sea"],

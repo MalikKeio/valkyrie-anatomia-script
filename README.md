@@ -54,7 +54,7 @@ keyboard shortcuts. See: https://github.com/valkyrieanatomia/language-vp
 The repo includes a Python program (`2html.py`) to automatically publish the
 translation in clean HTML format.
 
-You can by the way see the latest translation online here: http://valkyrieanatomia.github.io/.
+You can by the way see the latest translation online here: https://valkyrieanatomia.github.io/.
 
 # Some comments for programmers
 
