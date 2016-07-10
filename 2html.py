@@ -3,7 +3,7 @@
 import os
 import re
 
-from names import CHAPTERS, CHARACTERS, JP, EN, SIDE_STORY_CHAPTERS, OTHER_STORIES, EINHERJAR, STORIES, STATUS, TRANSLATED, INPROGRESS
+from names import CHAPTERS, CHARACTERS, JP, EN, SIDE_STORY_CHAPTERS, SIDE_STORY_CHAPTERS_LEN, OTHER_STORIES, EINHERJAR, STORIES, STATUS, TRANSLATED, INPROGRESS, NOSTORY
 CLASSES = {
     "f": "file",
     "u": "utterance",
@@ -238,6 +238,10 @@ def add_progress_to_chapter(chapter_div_class, chapter_div, chapter, title):
     elif chapter[STATUS] is INPROGRESS:
         chapter_div_class.append('in-progress')
         translation_completion['count'] += 0.5
+    elif chapter[STATUS] is NOSTORY:
+        chapter_div_class.append('no-story')
+        # Do not count chapters with no story in translation progression
+        translation_completion['max'] -= 1
     translation_completion['max'] += 1
     chapter_div.create_child(chapter_div_class, title)
 
@@ -256,8 +260,7 @@ HTML_HOME = "html"
 index_html_body = Div(['file'])
 progression_div = index_html_body.create_child(["progression"])
 chapter_count = 0
-# The -3 are there to ignore the 3 試練の道 (which contain no text)
-translation_completion = {'max': -3, 'count': -3}
+translation_completion = {'max': 0, 'count': 0}
 main_story_div = index_html_body.create_child(["main-story"])
 add_simple_chapters(CHAPTERS, main_story_div, 'main')
 side_story_div = index_html_body.create_child(["side-story"])
@@ -281,7 +284,7 @@ for chapters in SIDE_STORY_CHAPTERS:
         story_index += 1
 other_stories_div = index_html_body.create_child(["other-stories"])
 add_simple_chapters(OTHER_STORIES, other_stories_div, 'other')
-CHAPTER_TOTAL_COUNT = len(CHAPTERS) + 2*len(SIDE_STORY_CHAPTERS) + len(OTHER_STORIES)
+CHAPTER_TOTAL_COUNT = len(CHAPTERS) + SIDE_STORY_CHAPTERS_LEN + len(OTHER_STORIES)
 progression_div.innerHTML = "Transcript Progression: %.2f%%<br>Translation Progression: %.2f%%" % (100*(chapter_count/CHAPTER_TOTAL_COUNT), 100*(translation_completion['count']/translation_completion['max']))
 print("Transcript Progression: %d/%d" % (chapter_count, CHAPTER_TOTAL_COUNT))
 print("Translation Progression: %.1f/%d" % (translation_completion['count'], translation_completion['max']))

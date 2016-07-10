@@ -3,9 +3,10 @@ EN = 1
 STATUS = -1
 TRANSLATED = 1
 INPROGRESS = 2
+NOSTORY = 3
 
 CHAPTERS = {
-    1: ["戦乙女の目覚め", "The Awakening of the Battle Maiden", INPROGRESS],
+    1: ["戦乙女の目覚め", "The Awakening of the Battle Maiden", TRANSLATED],
     2: ["魂の律動：剣を振る理由", "Spiritual Concentration: What to Wield the Sword For"],
     3: ["魂の律動：禁じられた歌声", "Spiritual Concentration: Forbidden Voice"],
     4: ["運命の女神", "The Goddess of Destiny"],
@@ -53,6 +54,7 @@ SIDE_STORY_CHAPTERS = [
         ["盗まれた運命", ""]
     ]},
     {EINHERJAR: "ノルン", STORIES: [
+        ["運命を紡ぐ糸", ""], #https://www.youtube.com/watch?v=I1CkD-IVFkM
         ["運命の歯車", "The Cogs of Destiny"],
         ["運命の子", "The Fated Girl"]
     ]},
@@ -121,17 +123,22 @@ SIDE_STORY_CHAPTERS = [
         ["超古代文明の謎を解き明かせ", ""]
     ]},
     {EINHERJAR: "フリー", STORIES: [
-        ["試練の道・初級", "Path of Trials: Elementary Level", TRANSLATED],
-        ["試練の道・中級", "Path of Trials: Middle Level", TRANSLATED],
-        ["試練の道・上級", "Path of Trials: Upper Level", TRANSLATED]
+        ["試練の道・初級", "Path of Trials: Elementary Level", NOSTORY],
+        ["試練の道・中級", "Path of Trials: Middle Level", NOSTORY],
+        ["試練の道・上級", "Path of Trials: Upper Level", NOSTORY]
     ]}
 ]
+SIDE_STORY_CHAPTERS_LEN = 0
+for dic in SIDE_STORY_CHAPTERS:
+    SIDE_STORY_CHAPTERS_LEN += len(dic[STORIES])
 
 OTHER_STORIES = {
     1: ["戦乙女再臨！　彼方よりの来訪者", "The Second Advent of the Battle Maiden! A Visitor from Beyond", TRANSLATED],
     2: ["魂の律動：偽るモノ、偽らざるモノ", "Spiritual Concentration: Lies and Truths"],
-    3: ["魂の律動：答えなき祈り", "Spiritual Concentration: Unanswered Prayers"],
-    4: ["ヴァルハラ２", "Valhalla 2"] #FIXME There was some text in the first battle.
+    3: ["第１回　ヴァルハラ防衛線", "Valhalla Line of Defence 1", NOSTORY], # There was no story here
+    4: ["魂の律動：答えなき祈り", "Spiritual Concentration: Unanswered Prayers"],
+    5: ["第２回　ヴァルハラ防衛線", "Valhalla Line of Defence 2"], # https://www.youtube.com/watch?v=S6Jt_Ac2ey8
+    6: ["名もなき花", "Flower Without Even a Name"] # https://www.youtube.com/watch?v=XBnudQQcZVE
 }
 
 CHARACTERS = {

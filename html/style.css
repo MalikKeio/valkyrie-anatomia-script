@@ -58,6 +58,11 @@
   content: " (translated)";
   font-weight: bold;
 }
+.no-story::after {
+  content: " (no story)";
+  font-weight: bold;
+  color: grey;
+}
 .main-story::before {
   content: "Main Story";
   font-size: 150%;
