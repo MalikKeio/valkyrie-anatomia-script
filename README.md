@@ -47,14 +47,14 @@ Moreover, you can add comments at the end of lines with `//`.
 
 FYI, I use atom as a text editor and I created an atom plugin to highlight
 syntax according to the above rule. This plugin even implements some handy
-keyboard shortcuts. See: https://github.com/MalikKeio/language-vp
+keyboard shortcuts. See: https://github.com/valkyrieanatomia/language-vp
 
 # HTML output
 
 The repo includes a Python program (`2html.py`) to automatically publish the
 translation in clean HTML format.
 
-You can by the way see the latest translation online here: http://marihisa.com/.
+You can by the way see the latest translation online here: http://valkyrieanatomia.github.io/.
 
 # Some comments for programmers
 
