@@ -125,8 +125,9 @@ class Div:
     def sort(self):
         self.children.sort(key=lambda child: child.getHTML())
 class HTMLFile:
-    def __init__(self, path, title, body):
+    def __init__(self, path, title, body, subtitle=""):
         self.title = title
+        self.subtitle = subtitle
         self.body = body
         self.path = path
     def getHTML(self):
@@ -139,6 +140,7 @@ class HTMLFile:
 </head>
 <body>
     <h1>%s</h1>
+    <h3>%s</h3>
     %s
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -151,7 +153,7 @@ class HTMLFile:
 
     </script>
 </body>
-</html>''' % (self.path, self.title, self.title, self.body)
+</html>''' % (self.path, self.title, self.title, self.subtitle, self.body)
         return html
 
 
@@ -223,9 +225,13 @@ def create_subchapters(folder, chapter_content_div, csspath, title):
             if not os.path.exists(out_folder_path):
                 os.makedirs(out_folder_path)
             target = "%s/%s.html" % (out_folder_path, name)
-            chapter_content_div.create_child(["subchapter"], '<a href="%s">%s</a>' % (target.replace("%s/" % HTML_HOME, ""), name.split(',')[0]))
+            subchapter_name = name.split(',')[0][0:-3]
+            chapter_content_div.create_child(["subchapter"], '<a href="%s">%s</a>' % (target.replace("%s/" % HTML_HOME, ""), subchapter_name))
             with open(target, "w") as out:
-                out.write(HTMLFile(csspath, title, html_body).getHTML())
+                if len(files) > 1:
+                    out.write(HTMLFile(csspath, title, html_body, subtitle="Part %s" % subchapter_name).getHTML())
+                else:
+                    out.write(HTMLFile(csspath, title, html_body).getHTML())
     chapter_content_div.sort()
     if found:
         global chapter_count
