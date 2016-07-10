@@ -125,9 +125,10 @@ class Div:
     def sort(self):
         self.children.sort(key=lambda child: child.getHTML())
 class HTMLFile:
-    def __init__(self, path, title, body, subtitle=""):
+    def __init__(self, path, title, body, subtitle="", subsubtitle=""):
         self.title = title
         self.subtitle = subtitle
+        self.subsubtitle = subsubtitle
         self.body = body
         self.path = path
     def getHTML(self):
@@ -140,6 +141,7 @@ class HTMLFile:
 </head>
 <body>
     <h1>%s</h1>
+    <h2>%s</h2>
     <h3>%s</h3>
     %s
     <script>
@@ -153,7 +155,7 @@ class HTMLFile:
 
     </script>
 </body>
-</html>''' % (self.path, self.title, self.title, self.subtitle, self.body)
+</html>''' % (self.path, self.title, self.title, self.subtitle, self.subsubtitle, self.body)
         return html
 
 
@@ -213,7 +215,7 @@ def getHTMLForOneQuest(filejp, fileen):
         previous_line_empty = False
     return f.getHTML()
 
-def create_subchapters(folder, chapter_content_div, csspath, title):
+def create_subchapters(folder, chapter_content_div, csspath, title, subtitle=""):
     found = False
     for root, dirs, files in os.walk(folder):
         for name in files:
@@ -229,9 +231,9 @@ def create_subchapters(folder, chapter_content_div, csspath, title):
             chapter_content_div.create_child(["subchapter"], '<a href="%s">%s</a>' % (target.replace("%s/" % HTML_HOME, ""), subchapter_name))
             with open(target, "w") as out:
                 if len(files) > 1:
-                    out.write(HTMLFile(csspath, title, html_body, subtitle="Part %s" % subchapter_name).getHTML())
+                    out.write(HTMLFile(csspath, title, html_body, subtitle=subtitle, subsubtitle="Part %s" % subchapter_name).getHTML())
                 else:
-                    out.write(HTMLFile(csspath, title, html_body).getHTML())
+                    out.write(HTMLFile(csspath, title, html_body, subtitle=subtitle).getHTML())
     chapter_content_div.sort()
     if found:
         global chapter_count
@@ -286,7 +288,7 @@ for chapters in SIDE_STORY_CHAPTERS:
         story_title = "%s &mdash; %s" % (story[JP], story[EN])
         add_progress_to_chapter(['chapter-subtitle'], chapter_content_div, story, story_title)
         chapter_content_subdiv = chapter_content_div.create_child()
-        create_subchapters('jp/side/%s/%d' % (einherjar,story_index), chapter_content_subdiv, '../../../', title)
+        create_subchapters('jp/side/%s/%d' % (einherjar,story_index), chapter_content_subdiv, '../../../', title, subtitle=story_title)
         story_index += 1
 other_stories_div = index_html_body.create_child(["other-stories"])
 add_simple_chapters(OTHER_STORIES, other_stories_div, 'other')
