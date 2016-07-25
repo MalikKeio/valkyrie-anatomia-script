@@ -28,15 +28,15 @@
 
 		Do you remember?
 
-		Lenneth Valkyrja,
-		The One who flies the Sky, the One who gazes at Death,
+		Valkyrie Lenneth, /* made changes - spelling check
+		The One who flies in the Sky, the One who gazes upon Death, /* made changes added "in"
 		The Chooser of the Slain. <i>I</i>...
 
 		Come on!
-		You must choose... the <i>future</i>.
+		You must choose... the <b><i>future</i></b>. /* made changes - added bold
 
 		The future...
-		The future <i>I</i> choose is...
+		The future <b><i>I</i></b> choose is... /* made changes - added bold
 
 		That is the future you should not have chosen.
 
@@ -49,30 +49,30 @@
 ???
 	Did we win?
 ???
-	My spear, Gungnir, shows no more sign of arousal.
+	My spear, Gungnir, shows no more sign of revelation. /* made changes - "arousal" looks a bit odd to me
 	There should be no more enemy.
 ???
 	Did we do it?
 ???
 	We did! We won!
 ???
-	So, will light once again shine upon the world?
+	So, will light shine upon the world once again? /* made changes - moved "once again" to the end of sentence
 ???
 	Anyway, I'm dead on my feet.
 ???
 	Are you all right?
 ???
-	*humpf* humpf* Yeah, I'm fine.
+	*pant* *pant* Yeah, I'm fine. /* made changes - "humpf" = "pant"?
 ???
 	Ha! Ha! We did it!
 ???
-	O father Odin.
+	O' Father Odin. /* made changes - added apostrophe and captalized Father - considered highest authority?
 	We did win.
 ???
 	We were able to defeat our companions' foe.
 ???
 	We, Einherjar, these souls of ours
-	will finally be able to sleep the eternal sleep.
+	will finally be able to sleep the eternality. /* made changes - changed from "sleep the eternal sleep"?
 ???
 	Odin! We await your words of triumph.
 Odin
@@ -81,7 +81,7 @@ Odin
 Odin
 	Surpassing too numerous sacrifices, we now
 	stand upon the face of glory.
-	At last, we overcame darkness and brought about world peace.
+	At last, we overcame darkness and brought forth world peace. /* made changes from "about" to forth
 Odin
 	And yet, amidst our struggles until now,
 	we must not forget the countless sacrifices that we suffered.
@@ -93,7 +93,7 @@ Odin
 	I, the ruler of the Vanir,
 	Odin, hereby proclaim myself as the Greatest of the Gods.
 
-		We vanquished Lenneth Valkyrja!
+		We vanquished Valkyrie Lenneth! /* made changes - spelling check + word rearrangement
 
 ???
 	Fa... Father...
@@ -122,7 +122,7 @@ Odin
 ???
 	It's coming!
 ???
-	When it's come to this,
+	When it comes to this, /* made changes - omitted "it's" and added "s" to "come"
 	we will fight till the end as it behooves gods.
 Odin
 	Let's go.
@@ -139,11 +139,11 @@ Lenneth
 	I don't understand. I...
 ???
 	Come on, choose.
-	Your future will hold sway over the world. //FIXME
+	Your future will dicate the world. //FIXME /* made changes - "hold sway" to "dicate"
 Lenneth
 	What...
 
-		What should <i>I</i> have done...?
+		What should <b><i>I</i></b> have done...? /* made changes - added a bold
 
 ---
 
@@ -185,7 +185,7 @@ Zephyros
 Odin
 	The castle gate? What's Thor doing?
 Zephyros
-	It pains me to say that even Lord Thor's thundor
+	It pains me to say that even Lord Thor's thunder /* made changes - spelling check
 	was seemingly not enough to hold off the Vanir.
 Odin
 	Thor's dead!?
@@ -228,16 +228,16 @@ Zephyros
 Odin
 	You alright? Zephyros!
 Zephyros
-	... This is not of my age anymore.//FIXME: Better idiom?
+	... Not in this day and age. /* made changes - changed an idiom - STILLFIXME
 Odin
 	In the end, we are together.
 Zephyros
 	No, we still have hope.
 Odin
 	Hope?
-	Where is hope in that castle were nothing but the sound of crumbling stones can be heard?
+	Where is hope in that castle was nothing but the sound of crumbling stones can be heard? /* made changes - grammar check
 Zephyros
-	To the furthest ends of this land, there is this place, Valhalla.
+	To the farthest ends of the land, there is a place called, Valhalla. /* made changes - "furthest" to "farthest"
 Odin
 	There's nothing in Valhalla.
 Zephyros
@@ -245,7 +245,7 @@ Zephyros
 Odin
 	Hope?
 Zephyros
-	This is the new land for the Æsir.
+	That is new land for the Æsir. /* made changes - grammar check 
 	Please restore the Æsir.
 Odin
 	Restore? You're dreaming.
@@ -256,17 +256,17 @@ Zephyros
 	brought up with all his heart.
 	I will not let it end here.
 Odin
-	Humpf, you were one scolding old man.
+	Humph, you were one scolding old man. /* made changes - "humpf" to "humph"
 Zephyros
 	True, as you are now, you are a failure as a god.
 	You have no majesty, no power, no ability, not even an army.
 Zephyros
-	However, you have just one quality unrivaled amongst the gods.
+	However, you have the quality unrivaled amongst the gods. /* made changes - "just one" to "the"
 
 Odin
 	An unrivaled quality?
 Zephyros
-	This ambition of yours, burning as a flame.
+	This ambition of yours, burning like a fire. /* made changes - "burning as a flame" to "burning like a fire"
 Odin
 	Ambition...
 Zephyros
@@ -275,35 +275,35 @@ Zephyros
 Odin
 	Midgard? The dwelling place of humans?
 Zephyros
-	There, you will find a fiery mountain that scorches even the skyes.
-	You must make regain consciousness to the One resting there.
+	There, you will find a fiery mountain that scorches even the skies. /* made changes - spelling check
+	You must make the One resting regain consciousness. /* made changes - sentence rearrangment
 Odin
 	Is it a god?
 Zephyros
-	The Chooser of the Slain.
+	The Chosen Slain. /* made changes - changed "The Chooser of the Slain"
 Odin
-	The Chooser of the Slain?
-	You don't mean, Valkyrja?
+	The Chosen Slain? /* made changes ^same reason
+	You don't mean, Valkyrie? /* made changes - spelling check
 Zephyros
 	That is a legacy from your father.
 Odin
-	Really? Valkyrja?
+	Really? Valkyrie? /* made changes - spelling check
 Zephyros
-	I will stay here and gain time.
+	I will stay here and recover time. /* made changes - changed "gain"
 	You will go forth to the fiery mountain in Midgard.
 Odin
 	Why do you know so many things I've never even heard of?
 Zephyros
-	I did not live that old in vain.
+	I did not live that ripe old age in vain. /* made changes - changed "that old"
 	She's been sealed by divine flames.
-	You must make here awaken.
+	You must awaken. /* made changes - omitted "make here"
 Odin
 	Why was she sealed?
 Zephyros
-	Even me do not know the answer to that question.
+	Even I do not know the answer to that question. /* made changes - grammar check
 Odin
 	Would you wake up something that was sealed away?
-	Even though you have no idea why it was sealed in the first place?
+	Even though, you have no idea why it was sealed in the first place? /* made changes - grammar check
 Zephyros
 	If we do nothing, we will meet our doom anyway.
 	Come on, go!
@@ -318,17 +318,17 @@ Zephyros
 Odin
 	Zephyros...
 Zephyros
-	I bid you go. As you hesitate, the enemy is coming!
+	I bid you adieu. The longer you hestiate, the enemy is coming! /* made changes - changed "go" and "As you hesitate"
 Odin
 	And I got scolded again...
 Zephyros
 	Do not give me that face.
-	I, Zephyros, will not fall that easily.
+	I, Zephyros, will not fall easily. /* made changes - omitted "that"
 Odin
 	Let's meet again.
 Zephyros
 	Please live.
-	You shoulder all my hopes.
+	You shoulder all of my hopes. /* made changes - added "of"
 
 ---
 
@@ -371,7 +371,7 @@ Zephyros
 
 		for the descent of the goddess that marked the end to sorrowful slaughters.
 
-		The descent of the Battle Maiden, Valkyrja.
+		The descent of the Battle Maiden, Valkyrie. /* made changes - spelling check
 
 		This is the tale of the restoration of the Æsir.
 
@@ -401,17 +401,17 @@ Raven 1
 	What happened?
 Odin
 	Huginn! Muginn! You lots are like my limbs.
-	Don't you grasp the current situation?
+	Did you not grasp the current situation? /* made changes - not sure but changed "don't"
 Huginn
 	We were out scouting.
 	No word can describe our utmost shame.
 Odin
 	Hey! Your flapping is getting on my nerves!
-	Don't you remember I gave a human body!
+	Did you not remember I gave you a human body! /* made changes  - added "you" + changed "don't"
 Huginn
 	Is it fine this way?
 Muninn
-	It always feels itchy everywhere when in my human body.
+	It always feels itchy everywhere while in my human form. /* made changes - changed "body" and "when"
 Odin
 	Good, follow me.
 Huginn
@@ -422,11 +422,11 @@ Muninn
 	Is there a treasure?
 Odin
 	I came to open the fiery gates. Don't get in my way.
-	O flames! Let you abate!
+	O' flames! Let you abate! /* made changes - added apostraphe
 Muninn
 	Ouch!
 Odin
-	Move it if you don't want to get roasted.
+	Move it. That, if you don't want to get roasted. /* made changes - grammar check + added changes
 Muninn
 	Hey! What kind of treasure is there here? Jewels?
 Odin
@@ -441,38 +441,39 @@ Huginn
 	Just shut up.
 Odin
 	Awaken.
-	Battle Maiden, Lenneth Valkyrja.
+	Battle Maiden, Lenneth Valkyrie. /* made changes - spelling check
 Muninn
-	Lenneth Valkyrja??
+	Lenneth Valkyrie?? /* made changes ^same reasons
 
 		Awaken.
 
 		Who is it?
 
-		Awaken. Valkyrja.
+		Awaken. Valkyrie. /* made changes ^same reasons
 
 		Who is it? Who is pulling me out of my slumber?
+
 		Leave me alone.
 
-		In my name, Odin, Ruler of the Æsir, Greatest of the Gods,
+		In my name, Odin, Ruler of the Æsir, the Greatest of the Gods, /* made changes - added "the"
 		I order you to awaken.
 
 		Odin...
 
 		Awaken.
-		Battle Maiden, Lenneth Valkyrja.
+		Battle Maiden, Lenneth Valkyrie. /* made changes - spelling check
 
 Lenneth
 	You...
 Muninn
 	She's up!
 Odin
-	I am the God of All Creation,
+	I am the God of All Creations, /* made changes - added "s"
 	The Greatest of the Gods, Odin of the Æsir.
 Lenneth
-	Odin... of the Æsir... greatest of the gods...
+	Odin... of the Æsir... the greatest of the gods...
 Odin
-	Well, to put it accurately, I was the Greatest of the Gods... It's the past.
+	Well, to put it accurately, I was the Greatest of the Gods... It's all in the past. /* made changes - grammar check
 Lenneth
 	...
 Odin
@@ -488,7 +489,7 @@ Odin
 Lenneth
 	... Who?
 Odin
-	I've been telling you I am Odin!
+	I've been telling you, I am Odin! /* made changes - added a comma
 Lenneth
 	Me... Who am I...?
 Muninn
@@ -504,13 +505,13 @@ Lenneth
 	Lenneth... Is this my name?
 	Huh... I feel like my head is about to be split apart.
 Odin
-	You are the Chooser of the Slain.
+	You are the Chosen Slain. /* made changes - changed the word
 Lenneth
-	 Chooser of the slain...?
+	 Chosen Slain...?
 Odin
-	Various are the godly powers among the Æsir.
+	Elements are the godly powers among the Æsir. /* made changes - changed "various" - still thinking of better one
 	Flame, thunder, wind, ice...
-	However, you Valkyrja, you are unique.
+	However, you Valkyrie, you are unique. /* made changes - spelling check
 Lenneth
 	Am I unique?
 Odin
@@ -532,18 +533,18 @@ Odin
 Lenneth
 	What!?
 Odin
-	Now you do feel those about to depart and those who just met death.
+	Now you do feel those who are about to depart and those who have met death. /* made changes - changed "just" + added "who are about"
 	The rhythm of those taken over by death is different.
-	It vibrates more vigorously. A death rhythm.
+	It vibrates more vigorously. A rhythm of death. /* made changes - rearrange sentence?
 Lenneth
-	A death rhythm.
+	A rhythm of death. /* made changes - sentence rearrangement?
 Odin
 	Now, this world is ruled by Hel.
 	If we do nothing, all the departed will be taken away by Hel.
 Lenneth
-	Roaming in the deep for eternity...
+	Roaming in the depth of eternity... /* made changes - changed "in the deep for"
 Odin
-	You will understand a person's life as a whole as soon as you feel the death rhythm.
+	You will understand a person's life completely as soon as you feel the rhythm of death. /* made changes - grammar check
 Odin
 	Amongst the dead, as numerous as the stars,
 	Find those worthy to become my Einherjar, Lenneth.
@@ -573,7 +574,7 @@ Lenneth
 	I heard it...
 Odin
 	At this precise moment, a hero is about to die.
-	Surely we should move it out now.
+	Surely, we should move it out now. /* made changes - added a comma
 
 Muninn
 	Ah! Those two went somewhere!
@@ -590,8 +591,8 @@ Odin
 Lenneth
 	Where is this meadow?
 Odin
-	This is most probably a place etched in the memory of this voice.
-	Come on, listen to her death rhythm.
+	This is probably a place etched in the memory of this voice. /* made changes - omitted most
+	Come on, listen to her rhythm of death. /* made changes - changed "death rhythm"
 	Then you are to judge whether she's worthy to become an Einherjar.
 Lenneth
 	Got it.
@@ -604,8 +605,8 @@ Odin
 Lenneth
 	So?
 Odin
-	This memory too is being desecrated, gnawed away by Hel's troops.
-	Were the memory to be obliterated, she would not be able to become an Einherjar anymore.
+	This memory is also being desecrated, gnawed away by Hel's troops. /* made changes - changed "too"
+	If the memory were to be obliterated, she would not be able to become an Einherjar anymore. /* made changes - added "if" + grammar changes
 Lenneth
 	If I don't beat those, I won't be able to synchronize with the memories.
 	So that's not a straightforward path to tread...
@@ -615,17 +616,17 @@ Odin
 Lenneth
 	What is it?
 Odin
-	I may have lost everything, yet I am Odin, Ruler of the Æsir, Greatest of the Gods.
+	I may have lost everything, yet I am Odin, Ruler of the Æsir, the Greatest of the Gods.
 	Watch your mouth.
 Lenneth
-	Is it how it is?
+	Is that how it is? /* made changes - changed "it"
 Odin
 	That's how it is.
 Lenneth
 	At your orders, Lord Odin.
 	Then I am about to take my leaves.
 Odin
-	See that you could do it...
+	See, you could do it... /* made changes - omitted "that" and added a comma
 
 ---
 
@@ -656,7 +657,7 @@ Jeanne
 	So... At that time, I...
 Lenneth
 	Even in death you go on fighting, fierce soul.
-	I shall grant significance upon the stuggles of this death rhythm.
+	I shall grant significance upon your stuggles of this rhythm of death. /* made changes - changed "the"
 Jeanne
 	You are...?
 Lenneth
@@ -677,7 +678,7 @@ Lenneth
 	So? What will you do?
 Jeanne
 	My father, who brought me up as a son, would tell me that tale before bed.
-	Only before the warriors who died a hero's death would appear a silvered-hair maiden,
+	Only before the warriors who died a hero's death would appear a silver-haired maiden, /* made changes - changed words
 	who would choose them as Einherjar.
 Jeanne
 	If you are this maiden, then I will follow you.
@@ -695,7 +696,7 @@ Odin
 Lenneth
 	I chose an Einherjar.
 Odin
-	Hmpf.
+	Hmph. /* made changes - changed "Humpf"
 	So I guess you judged that human worthy to become an Einherjar, right?
 Lenneth
 	Yes.
@@ -711,7 +712,7 @@ Odin
 Lenneth
 	Yes!
 Odin
-	Lenneth! Lenneth Valkyrja.
+	Lenneth! Valkyrie Lenneth. /* made changes - spelling check + word ordering
 	To you, I shall assign Muninn.
 	Ask him whatever you need to know.
 Lenneth
@@ -727,4 +728,4 @@ Huginn
 	Valhalla?
 Odin
 	Home is where you make it.
-	I declare the founding of our new land in the place of Valhalla.
+I declare the founding of our new land in the place of Valhalla.
