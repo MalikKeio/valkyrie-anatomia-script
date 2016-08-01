@@ -29,10 +29,11 @@ CHAPTERS = {
     # I think that "巡りて" hints at the circulation of karma, especially to the fact that Altveer and Anelian are united by fate.
     18:["魂の律動：因果は巡りて", "All Is Fated"],
     19:["迷妄の地", "The Land of Illusion"],
-    20:["トラキシア戦記", "Traxian Chronicles"],
-    21:["轟く雷", "Roaring Thunder"],
-    22:["シャイロ二世の誕生", "The Birth of Shiloh II"],
-    23:["魂の律動：狂った歯車", "Spiritual Concentration: Machine Running Amok"]
+    20:["魂の律動：狂った歯車", "Spiritual Concentration: Machine Running Amok"],
+    21:["トラキシア戦記", "Traxian Chronicles"],
+    22:["轟く雷", "Roaring Thunder"],
+    23:["シャイロ二世の誕生", "The Birth of Shiloh II"],
+    24:["オーディンの秘密", "Odin's Secret"]
 }
 
 EINHERJAR = "EINHERJAR"
@@ -141,7 +142,9 @@ OTHER_STORIES = {
     3: ["第１回　ヴァルハラ防衛線", "Valhalla Line of Defence 1", NOSTORY], # There was no story here
     4: ["魂の律動：答えなき祈り", "Spiritual Concentration: Unanswered Prayers"],
     5: ["第２回　ヴァルハラ防衛線", "Valhalla Line of Defence 2"], # https://www.youtube.com/watch?v=S6Jt_Ac2ey8
-    6: ["名もなき花", "Flower Without Even a Name"] # https://www.youtube.com/watch?v=XBnudQQcZVE
+    6: ["名もなき花", "Flower Without Even a Name"], # https://www.youtube.com/watch?v=XBnudQQcZVE
+    7: ["深淵の門", "Gate of the Abyss", NOSTORY],
+    8: ["第３回　ヴァルハラ防衛線", "Valhalla Line of Defence 3"]
 }
 
 CHARACTERS = {
