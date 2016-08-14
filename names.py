@@ -62,6 +62,11 @@ SIDE_STORY_CHAPTERS = [
         ["運命の歯車", "The Cogs of Destiny"],
         ["運命の子", "The Fated Girl"]
     ]},
+    {EINHERJAR: "ソー", STORIES: [
+        ["雷の行方", "The Thunder God's Whereabouts"], # https://youtu.be/KZ6DOIfSs5M?t=56s
+        ["悩める雷神", "A Worried Thunder God"], # https://www.youtube.com/watch?v=4jpM63yKEsk
+        ["雷神の戦", "The Thunder God's Struggle"] # https://www.youtube.com/watch?v=lyPGVveBQBw
+    ]},
     {EINHERJAR: "ルチア", STORIES: [
         ["母の遺した旋律", ""],
         ["ルチアの決意", ""]
@@ -144,7 +149,8 @@ OTHER_STORIES = {
     5: ["第２回　ヴァルハラ防衛線", "Valhalla Line of Defence 2"], # https://www.youtube.com/watch?v=S6Jt_Ac2ey8
     6: ["名もなき花", "Flower Without Even a Name"], # https://www.youtube.com/watch?v=XBnudQQcZVE
     7: ["深淵の門", "Gate of the Abyss", NOSTORY],
-    8: ["第３回　ヴァルハラ防衛線", "Valhalla Line of Defence 3"]
+    8: ["第３回　ヴァルハラ防衛線", "Valhalla Line of Defence 3"], # https://youtu.be/obwhq6IeGtY?t=5m41s
+    9: ["女王の教育係", "The Queen's Pedagogue"] # https://youtu.be/CbkbENIuT64?t=3m1s
 }
 
 CHARACTERS = {
@@ -179,6 +185,7 @@ CHARACTERS.update({
     # Liu sounds Chinese. It could be Riu, I do not really see any difference.
     "リウ": "Liu",
     "ノルン": "Norn",
+    "ソー": "Thor",
     # Most likely an Italian name
     "ルチア": "Lucia",
     # Most likely a gratuitous French name. Choose this spelling to look like the House of Valois.
