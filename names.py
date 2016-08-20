@@ -150,7 +150,9 @@ OTHER_STORIES = {
     6: ["名もなき花", "Flower Without Even a Name"], # https://www.youtube.com/watch?v=XBnudQQcZVE
     7: ["深淵の門", "Gate of the Abyss", NOSTORY],
     8: ["第３回　ヴァルハラ防衛線", "Valhalla Line of Defence 3"], # https://youtu.be/obwhq6IeGtY?t=5m41s
-    9: ["女王の教育係", "The Queen's Pedagogue"] # https://youtu.be/CbkbENIuT64?t=3m1s
+    9: ["女王の教育係", "The Queen's Pedagogue"], # https://youtu.be/CbkbENIuT64?t=3m1s
+    10: ["神が遺した錬金術", "The Alchemy the Gods Left Behind"], # not found yet
+    11: ["黒き戦乙女の挑戦状", "The Challenge of the Black Battle Maiden"] # https://www.youtube.com/watch?v=OJwHFrVp27E
 }
 
 CHARACTERS = {
